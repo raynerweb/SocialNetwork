@@ -26,6 +26,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ls-lf-Skj">
                         <rect key="frame" x="194" y="23.5" width="44" height="30"/>
                         <state key="normal" title="Follow"/>
+                        <connections>
+                            <action selector="followButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Bm-mO-eiN"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4E-cD-ogH">
                         <rect key="frame" x="438" y="16" width="45" height="45"/>
@@ -39,6 +42,9 @@
                         <state key="normal" title=". . .">
                             <color key="titleColor" systemColor="labelColor"/>
                         </state>
+                        <connections>
+                            <action selector="moreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P10-mK-GUt"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-9R-iBq">
                         <rect key="frame" x="16" y="373.5" width="24" height="24"/>
@@ -48,6 +54,9 @@
                             <constraint firstAttribute="height" constant="24" id="aBS-Zy-3NE"/>
                         </constraints>
                         <state key="normal" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="likeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G4L-4u-sX2"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-Gv-nzG">
                         <rect key="frame" x="56" y="373.5" width="24" height="24"/>
@@ -57,6 +66,9 @@
                             <constraint firstAttribute="width" constant="24" id="8fZ-jj-Tic"/>
                         </constraints>
                         <state key="normal" image="message" catalog="system"/>
+                        <connections>
+                            <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SpN-MI-Fyf"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-1p-7Nw">
                         <rect key="frame" x="96" y="373.5" width="24" height="24"/>
@@ -66,6 +78,9 @@
                             <constraint firstAttribute="width" constant="24" id="SLW-ox-hVg"/>
                         </constraints>
                         <state key="normal" image="paperplane" catalog="system"/>
+                        <connections>
+                            <action selector="shareButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S6J-qq-pEB"/>
+                        </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sNg-1q-ukS">
                         <rect key="frame" x="16" y="16" width="45" height="45"/>
@@ -80,15 +95,6 @@
                             <constraint firstAttribute="width" secondItem="q4Q-3Q-IRb" secondAttribute="height" multiplier="16:9" id="oTj-SY-dn2"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRB-r0-tba">
-                        <rect key="frame" x="459" y="373.5" width="24" height="24"/>
-                        <accessibility key="accessibilityConfiguration" label="Booksmark"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="MEQ-hq-Zdm"/>
-                            <constraint firstAttribute="width" constant="24" id="Y7R-mg-etg"/>
-                        </constraints>
-                        <state key="normal" image="book" catalog="system"/>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Kb3-eI-Tle" firstAttribute="leading" secondItem="sNg-1q-ukS" secondAttribute="trailing" constant="16" id="2cG-0o-VYq"/>
@@ -100,10 +106,8 @@
                     <constraint firstItem="q4Q-3Q-IRb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ffm-qE-w2t"/>
                     <constraint firstItem="sNg-1q-ukS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="H5N-4l-fPf"/>
                     <constraint firstAttribute="trailing" secondItem="B4E-cD-ogH" secondAttribute="trailing" constant="16" id="I01-m5-ScD"/>
-                    <constraint firstItem="sRB-r0-tba" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="16" id="KrY-YV-SLg"/>
                     <constraint firstItem="aTd-9R-iBq" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="16" id="MK6-nY-Zpj"/>
                     <constraint firstItem="Kb3-eI-Tle" firstAttribute="top" secondItem="sNg-1q-ukS" secondAttribute="bottom" constant="-33" id="ZQZ-N5-PLI"/>
-                    <constraint firstAttribute="trailing" secondItem="sRB-r0-tba" secondAttribute="trailing" constant="16" id="iNH-NR-8B3"/>
                     <constraint firstItem="B4E-cD-ogH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ohE-5N-e21"/>
                     <constraint firstItem="q4Q-3Q-IRb" firstAttribute="top" secondItem="B4E-cD-ogH" secondAttribute="bottom" constant="16" id="rE5-O0-9Lj"/>
                     <constraint firstItem="kRA-1p-7Nw" firstAttribute="leading" secondItem="tqC-Gv-nzG" secondAttribute="trailing" constant="16" id="tPv-CB-40w"/>
@@ -113,11 +117,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="postImageView" destination="q4Q-3Q-IRb" id="Wo1-Eg-yvu"/>
+                <outlet property="profileName" destination="Kb3-eI-Tle" id="mUl-Kq-teH"/>
+                <outlet property="profilePictureImageView" destination="sNg-1q-ukS" id="zGt-be-1xw"/>
+            </connections>
             <point key="canvasLocation" x="-160.1449275362319" y="66.964285714285708"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="book" catalog="system" width="128" height="102"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>

@@ -370,7 +370,13 @@
                             <outlet property="delegate" destination="CJr-1m-yAz" id="z05-br-nY5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Teclado 2" id="gdn-GK-Jze"/>
+                    <navigationItem key="navigationItem" title="Teclado 2" id="gdn-GK-Jze">
+                        <barButtonItem key="rightBarButtonItem" title="Feed" id="mXT-A8-uPW">
+                            <connections>
+                                <segue destination="bak-Gv-6NQ" kind="show" id="6d5-Ut-UzS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="checkPasswdTextField" destination="GBB-dZ-jHj" id="B92-A0-UGe"/>
                         <outlet property="emailTextField" destination="2Kp-aM-MbP" id="kBL-7b-uR3"/>
@@ -385,6 +391,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oi5-cj-Tyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="833.33333333333337" y="-116.51785714285714"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="Gfj-km-JTc">
+            <objects>
+                <tableViewController id="bak-Gv-6NQ" customClass="SocialTableViewController" customModule="SocialNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nl5-Oi-d9K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="bak-Gv-6NQ" id="tUo-EQ-KhX"/>
+                            <outlet property="delegate" destination="bak-Gv-6NQ" id="iMF-LX-M9f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Feed" id="Xmh-i7-MYi" customClass="Social"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7MC-w9-7NE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="-117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gh1-7N-RTC">
