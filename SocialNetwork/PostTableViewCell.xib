@@ -13,7 +13,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="418" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="SocialNetwork" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="499" height="418"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="499" height="418"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -46,7 +46,7 @@
                             <action selector="moreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P10-mK-GUt"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-9R-iBq">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-9R-iBq">
                         <rect key="frame" x="16" y="373.5" width="24" height="24"/>
                         <accessibility key="accessibilityConfiguration" label="Like"/>
                         <constraints>
@@ -58,7 +58,7 @@
                             <action selector="likeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G4L-4u-sX2"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-Gv-nzG">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-Gv-nzG">
                         <rect key="frame" x="56" y="373.5" width="24" height="24"/>
                         <accessibility key="accessibilityConfiguration" label="Comment"/>
                         <constraints>
@@ -70,7 +70,7 @@
                             <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SpN-MI-Fyf"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-1p-7Nw">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-1p-7Nw">
                         <rect key="frame" x="96" y="373.5" width="24" height="24"/>
                         <accessibility key="accessibilityConfiguration" label="Share"/>
                         <constraints>
@@ -89,7 +89,7 @@
                             <constraint firstAttribute="height" constant="45" id="RAj-BD-Rs7"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q4Q-3Q-IRb">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4Q-3Q-IRb">
                         <rect key="frame" x="0.0" y="77" width="499" height="280.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="q4Q-3Q-IRb" secondAttribute="height" multiplier="16:9" id="oTj-SY-dn2"/>
@@ -98,6 +98,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Kb3-eI-Tle" firstAttribute="leading" secondItem="sNg-1q-ukS" secondAttribute="trailing" constant="16" id="2cG-0o-VYq"/>
+                    <constraint firstAttribute="bottom" secondItem="kRA-1p-7Nw" secondAttribute="bottom" constant="24" id="3CA-2U-gPT"/>
                     <constraint firstItem="sNg-1q-ukS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6rk-yf-BOI"/>
                     <constraint firstItem="tqC-Gv-nzG" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="16" id="8Fi-pl-VGe"/>
                     <constraint firstItem="aTd-9R-iBq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="9Ih-Xl-H4a"/>
@@ -108,7 +109,9 @@
                     <constraint firstAttribute="trailing" secondItem="B4E-cD-ogH" secondAttribute="trailing" constant="16" id="I01-m5-ScD"/>
                     <constraint firstItem="aTd-9R-iBq" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="16" id="MK6-nY-Zpj"/>
                     <constraint firstItem="Kb3-eI-Tle" firstAttribute="top" secondItem="sNg-1q-ukS" secondAttribute="bottom" constant="-33" id="ZQZ-N5-PLI"/>
+                    <constraint firstAttribute="bottom" secondItem="aTd-9R-iBq" secondAttribute="bottom" constant="24" id="Zfa-Xr-8nC"/>
                     <constraint firstItem="B4E-cD-ogH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ohE-5N-e21"/>
+                    <constraint firstAttribute="bottom" secondItem="tqC-Gv-nzG" secondAttribute="bottom" constant="24" id="qj6-AW-5Hw"/>
                     <constraint firstItem="q4Q-3Q-IRb" firstAttribute="top" secondItem="B4E-cD-ogH" secondAttribute="bottom" constant="16" id="rE5-O0-9Lj"/>
                     <constraint firstItem="kRA-1p-7Nw" firstAttribute="leading" secondItem="tqC-Gv-nzG" secondAttribute="trailing" constant="16" id="tPv-CB-40w"/>
                     <constraint firstAttribute="trailing" secondItem="q4Q-3Q-IRb" secondAttribute="trailing" id="tWa-rZ-jyq"/>

@@ -40,6 +40,13 @@ class PostTableViewCell: UITableViewCell {
     
     func setup(with data: String) {
         profileName.text = data
+        
+        profilePictureImageView.image = UIImage(data: try! Data(contentsOf: URL(string: "https://picsum.photos/120/120")!))
+        
+        let width = Int(UIScreen.main.nativeBounds.size.width)
+        let height = Int(width * (16/9))
+        
+        postImageView.image = UIImage(data: try! Data(contentsOf: URL(string: "https://picsum.photos/\(width)/\(height)")!))
     }
     
 }
