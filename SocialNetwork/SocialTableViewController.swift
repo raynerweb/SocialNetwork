@@ -11,6 +11,13 @@ class SocialTableViewController: UITableViewController {
     
     private let kBaseURL = "https://jsonplaceholder.typicode.com"
     
+    
+    @IBAction func onRefresh(_ sender: UIRefreshControl) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+            self.refreshControl?.endRefreshing()
+        }
+    }
+    
     private var postUsers = [PostUser]() {
         didSet {
             tableView.reloadData()

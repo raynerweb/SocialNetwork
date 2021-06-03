@@ -406,6 +406,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Feed" id="Xmh-i7-MYi" customClass="Social"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="OQY-6E-92i">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="onRefresh:" destination="bak-Gv-6NQ" eventType="valueChanged" id="BN0-cH-7o2"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MC-w9-7NE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
