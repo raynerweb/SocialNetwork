@@ -13,25 +13,25 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="418" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="SocialNetwork" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="499" height="418"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="499" height="418"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fulano de Tal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb3-eI-Tle">
-                        <rect key="frame" x="77" y="28" width="101" height="21"/>
+                        <rect key="frame" x="77" y="28" width="100.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ls-lf-Skj">
-                        <rect key="frame" x="194" y="23.5" width="44" height="30"/>
+                        <rect key="frame" x="193.5" y="23.5" width="44" height="30"/>
                         <state key="normal" title="Follow"/>
                         <connections>
                             <action selector="followButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Bm-mO-eiN"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4E-cD-ogH">
-                        <rect key="frame" x="438" y="16" width="45" height="45"/>
+                        <rect key="frame" x="437.5" y="16" width="45" height="45"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="48h-JZ-Ubh"/>
                             <constraint firstAttribute="width" constant="45" id="8hF-96-5Yh"/>
@@ -46,42 +46,50 @@
                             <action selector="moreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P10-mK-GUt"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-9R-iBq">
-                        <rect key="frame" x="16" y="373.5" width="24" height="24"/>
-                        <accessibility key="accessibilityConfiguration" label="Like"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-ut-7EW">
+                        <rect key="frame" x="16" y="378" width="466.5" height="24"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-9R-iBq">
+                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                <accessibility key="accessibilityConfiguration" label="Like"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="NYP-Sy-gOb"/>
+                                    <constraint firstAttribute="height" constant="24" id="aBS-Zy-3NE"/>
+                                </constraints>
+                                <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="likeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G4L-4u-sX2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-Gv-nzG">
+                                <rect key="frame" x="40" y="0.0" width="24" height="24"/>
+                                <accessibility key="accessibilityConfiguration" label="Comment"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="1xe-cf-v5Y"/>
+                                    <constraint firstAttribute="width" constant="24" id="8fZ-jj-Tic"/>
+                                </constraints>
+                                <state key="normal" image="message" catalog="system"/>
+                                <connections>
+                                    <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SpN-MI-Fyf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-1p-7Nw">
+                                <rect key="frame" x="442.5" y="0.0" width="24" height="24"/>
+                                <accessibility key="accessibilityConfiguration" label="Share"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="EZF-R3-fz8"/>
+                                    <constraint firstAttribute="width" constant="24" id="SLW-ox-hVg"/>
+                                </constraints>
+                                <state key="normal" image="paperplane" catalog="system"/>
+                                <connections>
+                                    <action selector="shareButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S6J-qq-pEB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="width" constant="24" id="NYP-Sy-gOb"/>
-                            <constraint firstAttribute="height" constant="24" id="aBS-Zy-3NE"/>
+                            <constraint firstAttribute="height" constant="24" id="DB9-wT-g3X"/>
                         </constraints>
-                        <state key="normal" image="heart" catalog="system"/>
-                        <connections>
-                            <action selector="likeButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G4L-4u-sX2"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-Gv-nzG">
-                        <rect key="frame" x="56" y="373.5" width="24" height="24"/>
-                        <accessibility key="accessibilityConfiguration" label="Comment"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="1xe-cf-v5Y"/>
-                            <constraint firstAttribute="width" constant="24" id="8fZ-jj-Tic"/>
-                        </constraints>
-                        <state key="normal" image="message" catalog="system"/>
-                        <connections>
-                            <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SpN-MI-Fyf"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-1p-7Nw">
-                        <rect key="frame" x="96" y="373.5" width="24" height="24"/>
-                        <accessibility key="accessibilityConfiguration" label="Share"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="EZF-R3-fz8"/>
-                            <constraint firstAttribute="width" constant="24" id="SLW-ox-hVg"/>
-                        </constraints>
-                        <state key="normal" image="paperplane" catalog="system"/>
-                        <connections>
-                            <action selector="shareButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S6J-qq-pEB"/>
-                        </connections>
-                    </button>
+                    </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sNg-1q-ukS">
                         <rect key="frame" x="16" y="16" width="45" height="45"/>
                         <constraints>
@@ -89,34 +97,32 @@
                             <constraint firstAttribute="height" constant="45" id="RAj-BD-Rs7"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4Q-3Q-IRb">
-                        <rect key="frame" x="0.0" y="77" width="499" height="280.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q4Q-3Q-IRb">
+                        <rect key="frame" x="0.0" y="77" width="498.5" height="280.5"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="280.5" id="PMo-M2-3aa"/>
                             <constraint firstAttribute="width" secondItem="q4Q-3Q-IRb" secondAttribute="height" multiplier="16:9" id="oTj-SY-dn2"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Kb3-eI-Tle" firstAttribute="leading" secondItem="sNg-1q-ukS" secondAttribute="trailing" constant="16" id="2cG-0o-VYq"/>
-                    <constraint firstAttribute="bottom" secondItem="kRA-1p-7Nw" secondAttribute="bottom" constant="24" id="3CA-2U-gPT"/>
+                    <constraint firstItem="o4c-ut-7EW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4Go-9z-f5k"/>
                     <constraint firstItem="sNg-1q-ukS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6rk-yf-BOI"/>
-                    <constraint firstItem="tqC-Gv-nzG" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="16" id="8Fi-pl-VGe"/>
-                    <constraint firstItem="aTd-9R-iBq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="9Ih-Xl-H4a"/>
                     <constraint firstItem="6Ls-lf-Skj" firstAttribute="centerY" secondItem="Kb3-eI-Tle" secondAttribute="centerY" id="9R1-2f-fc7"/>
-                    <constraint firstItem="tqC-Gv-nzG" firstAttribute="leading" secondItem="aTd-9R-iBq" secondAttribute="trailing" constant="16" id="DY4-7F-AFY"/>
                     <constraint firstItem="q4Q-3Q-IRb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ffm-qE-w2t"/>
                     <constraint firstItem="sNg-1q-ukS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="H5N-4l-fPf"/>
                     <constraint firstAttribute="trailing" secondItem="B4E-cD-ogH" secondAttribute="trailing" constant="16" id="I01-m5-ScD"/>
-                    <constraint firstItem="aTd-9R-iBq" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="16" id="MK6-nY-Zpj"/>
+                    <constraint firstItem="o4c-ut-7EW" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="X5O-1s-mzm"/>
                     <constraint firstItem="Kb3-eI-Tle" firstAttribute="top" secondItem="sNg-1q-ukS" secondAttribute="bottom" constant="-33" id="ZQZ-N5-PLI"/>
-                    <constraint firstAttribute="bottom" secondItem="aTd-9R-iBq" secondAttribute="bottom" constant="24" id="Zfa-Xr-8nC"/>
+                    <constraint firstItem="o4c-ut-7EW" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="20.5" id="ZYL-1K-ff5"/>
+                    <constraint firstAttribute="bottom" secondItem="o4c-ut-7EW" secondAttribute="bottom" constant="16" id="d5F-mt-229"/>
                     <constraint firstItem="B4E-cD-ogH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ohE-5N-e21"/>
-                    <constraint firstAttribute="bottom" secondItem="tqC-Gv-nzG" secondAttribute="bottom" constant="24" id="qj6-AW-5Hw"/>
+                    <constraint firstAttribute="trailing" secondItem="o4c-ut-7EW" secondAttribute="trailing" constant="16" id="qhJ-ko-jue"/>
                     <constraint firstItem="q4Q-3Q-IRb" firstAttribute="top" secondItem="B4E-cD-ogH" secondAttribute="bottom" constant="16" id="rE5-O0-9Lj"/>
-                    <constraint firstItem="kRA-1p-7Nw" firstAttribute="leading" secondItem="tqC-Gv-nzG" secondAttribute="trailing" constant="16" id="tPv-CB-40w"/>
                     <constraint firstAttribute="trailing" secondItem="q4Q-3Q-IRb" secondAttribute="trailing" id="tWa-rZ-jyq"/>
-                    <constraint firstItem="kRA-1p-7Nw" firstAttribute="top" secondItem="q4Q-3Q-IRb" secondAttribute="bottom" constant="16" id="vvn-sZ-ufJ"/>
                     <constraint firstItem="6Ls-lf-Skj" firstAttribute="leading" secondItem="Kb3-eI-Tle" secondAttribute="trailing" constant="16" id="weM-IO-S0W"/>
+                    <constraint firstItem="B4E-cD-ogH" firstAttribute="centerY" secondItem="6Ls-lf-Skj" secondAttribute="centerY" id="zBg-31-u6P"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

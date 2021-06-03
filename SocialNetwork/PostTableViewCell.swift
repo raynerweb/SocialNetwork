@@ -38,8 +38,8 @@ class PostTableViewCell: UITableViewCell {
         tableView.register(nib, forCellReuseIdentifier: kReuseIdentifier)
     }
     
-    func setup(with data: String) {
-        profileName.text = data
+    func setup(with postUser: PostUser) {
+        profileName.text = postUser.title
         
         profilePictureImageView.image = UIImage(data: try! Data(contentsOf: URL(string: "https://picsum.photos/120/120")!))
         
