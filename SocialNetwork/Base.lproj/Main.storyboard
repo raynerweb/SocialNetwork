@@ -54,7 +54,7 @@
         <!--Teclado 2-->
         <scene sceneID="OQF-ew-cob">
             <objects>
-                <tableViewController id="CJr-1m-yAz" sceneMemberID="viewController">
+                <tableViewController id="CJr-1m-yAz" customClass="FormTableViewController" customModule="SocialNetwork" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fLB-LF-T3e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,6 +371,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Teclado 2" id="gdn-GK-Jze"/>
+                    <connections>
+                        <outlet property="checkPasswdTextField" destination="GBB-dZ-jHj" id="B92-A0-UGe"/>
+                        <outlet property="emailTextField" destination="2Kp-aM-MbP" id="kBL-7b-uR3"/>
+                        <outlet property="nameTextField" destination="nm7-Mc-3Mv" id="Vrw-Ob-6Eh"/>
+                        <outlet property="passwdTextField" destination="oky-4s-nbD" id="yJM-Q8-SfL"/>
+                        <outletCollection property="textFields" destination="nm7-Mc-3Mv" collectionClass="NSMutableArray" id="iY4-oA-KhZ"/>
+                        <outletCollection property="textFields" destination="2Kp-aM-MbP" collectionClass="NSMutableArray" id="rLS-g0-K8y"/>
+                        <outletCollection property="textFields" destination="oky-4s-nbD" collectionClass="NSMutableArray" id="CaP-dO-pHM"/>
+                        <outletCollection property="textFields" destination="GBB-dZ-jHj" collectionClass="NSMutableArray" id="Fb9-jj-Geb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oi5-cj-Tyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
