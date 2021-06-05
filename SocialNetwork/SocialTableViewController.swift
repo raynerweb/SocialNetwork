@@ -11,6 +11,7 @@ class SocialTableViewController: UITableViewController {
     
     private let kBaseURL = "https://jsonplaceholder.typicode.com"
     
+    private let imageDownloader = ImageDownloader.shared
     
     @IBAction func onRefresh(_ sender: UIRefreshControl) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
@@ -30,6 +31,8 @@ class SocialTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        imageDownloader.beginCachingImages()
         
         if let url = URL(string: "\(kBaseURL)/posts") {
             let session = URLSession.shared
@@ -61,7 +64,7 @@ class SocialTableViewController: UITableViewController {
         let postUser = postUsers[index]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.kReuseIdentifier, for: indexPath) as! PostTableViewCell
-        cell.setup(with: postUser)
+        cell.setup(with: postUser, postImage: imageDownloader.randomImage(), profilePictureImage: imageDownloader.randomImage())
         return cell
     }
     

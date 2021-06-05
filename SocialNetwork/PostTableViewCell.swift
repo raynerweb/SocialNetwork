@@ -9,6 +9,8 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
+    
+    
     static let kReuseIdentifier = "PostTableViewCell"
 
     @IBOutlet weak var profilePictureImageView: UIImageView!
@@ -38,15 +40,11 @@ class PostTableViewCell: UITableViewCell {
         tableView.register(nib, forCellReuseIdentifier: kReuseIdentifier)
     }
     
-    func setup(with postUser: PostUser) {
+    func setup(with postUser: PostUser, postImage: UIImage, profilePictureImage: UIImage) {
         profileName.text = postUser.title
         
-        profilePictureImageView.image = UIImage(data: try! Data(contentsOf: URL(string: "https://picsum.photos/120/120")!))
-        
-        let width = Int(UIScreen.main.nativeBounds.size.width)
-        let height = Int(width * (16/9))
-        
-        postImageView.image = UIImage(data: try! Data(contentsOf: URL(string: "https://picsum.photos/\(width)/\(height)")!))
+        profilePictureImageView.image = profilePictureImage
+        postImageView.image = postImage
     }
     
 }
