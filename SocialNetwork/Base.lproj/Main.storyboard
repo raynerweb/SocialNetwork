@@ -8,6 +8,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="taW-Ju-EWf">
+            <objects>
+                <tabBarController id="oYb-bl-9sS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="F73-UE-Opp"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="20Q-kc-DYr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bak-Gv-6NQ" kind="relationship" relationship="viewControllers" id="90h-fe-CqJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TpN-en-hJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="-1221"/>
+        </scene>
         <!--Teclado-->
         <scene sceneID="CbF-Vs-GvS">
             <objects>
@@ -56,7 +74,7 @@
             <objects>
                 <tableViewController id="CJr-1m-yAz" customClass="FormTableViewController" customModule="SocialNetwork" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fLB-LF-T3e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -371,11 +389,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Teclado 2" id="gdn-GK-Jze">
-                        <barButtonItem key="rightBarButtonItem" title="Feed" id="mXT-A8-uPW">
-                            <connections>
-                                <segue destination="bak-Gv-6NQ" kind="show" id="6d5-Ut-UzS"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Feed" id="mXT-A8-uPW"/>
                     </navigationItem>
                     <connections>
                         <outlet property="checkPasswdTextField" destination="GBB-dZ-jHj" id="B92-A0-UGe"/>
@@ -405,8 +419,10 @@
                             <outlet property="delegate" destination="bak-Gv-6NQ" id="iMF-LX-M9f"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="2j4-ha-Sn0"/>
                     <navigationItem key="navigationItem" title="Feed" id="Xmh-i7-MYi" customClass="Social"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="OQY-6E-92i">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="onRefresh:" destination="bak-Gv-6NQ" eventType="valueChanged" id="BN0-cH-7o2"/>
@@ -415,7 +431,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MC-w9-7NE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="-117"/>
+            <point key="canvasLocation" x="1468" y="-1221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gh1-7N-RTC">
@@ -428,12 +444,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="F7B-fz-TTO" kind="relationship" relationship="rootViewController" id="loF-hj-CMo"/>
+                        <segue destination="oYb-bl-9sS" kind="relationship" relationship="rootViewController" id="IU0-eI-HJQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cI-Fx-dlp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1071.0144927536232" y="-116.51785714285714"/>
+            <point key="canvasLocation" x="-829" y="-1221"/>
         </scene>
     </scenes>
     <resources>

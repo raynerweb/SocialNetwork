@@ -64,7 +64,11 @@ class SocialTableViewController: UITableViewController {
         let postUser = postUsers[index]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.kReuseIdentifier, for: indexPath) as! PostTableViewCell
-        cell.setup(with: postUser, postImage: imageDownloader.randomImage(), profilePictureImage: imageDownloader.randomImage())
+        
+        if let postUrl = URL(string: "https://picsum.photos/480/480?\(index)"), let profileUrl = URL(string: "https://picsum.photos/45/45?\(index)"){
+            cell.setup(with: postUser, postImage: postUrl, profileImage: profileUrl)
+        }
+        
         return cell
     }
     

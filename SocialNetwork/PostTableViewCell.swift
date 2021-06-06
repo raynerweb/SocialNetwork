@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Imaginary
 
 class PostTableViewCell: UITableViewCell {
     
@@ -40,11 +41,10 @@ class PostTableViewCell: UITableViewCell {
         tableView.register(nib, forCellReuseIdentifier: kReuseIdentifier)
     }
     
-    func setup(with postUser: PostUser, postImage: UIImage, profilePictureImage: UIImage) {
+    func setup(with postUser: PostUser, postImage postUrl: URL, profileImage profileUrl: URL) {
         profileName.text = postUser.title
-        
-        profilePictureImageView.image = profilePictureImage
-        postImageView.image = postImage
+        profilePictureImageView.setImage(url: profileUrl, placeholder: UIImage(named: "noimage")!)
+        postImageView.setImage(url: postUrl, placeholder: UIImage(named: "noimage")!)
     }
     
 }
