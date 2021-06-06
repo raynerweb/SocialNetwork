@@ -24,6 +24,8 @@
 		951E6589266D2CCE00207B28 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E6588266D2CCE00207B28 /* Album.swift */; };
 		951E658C266D576E00207B28 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E658A266D576E00207B28 /* AlbumTableViewCell.swift */; };
 		951E658D266D576E00207B28 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951E658B266D576E00207B28 /* AlbumTableViewCell.xib */; };
+		951E6590266D693E00207B28 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E658E266D693E00207B28 /* AlbumCollectionViewCell.swift */; };
+		951E6591266D693E00207B28 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951E658F266D693E00207B28 /* AlbumCollectionViewCell.xib */; };
 		959650CD2649FAEE00D91995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959650CC2649FAEE00D91995 /* AppDelegate.swift */; };
 		959650CF2649FAEE00D91995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959650CE2649FAEE00D91995 /* SceneDelegate.swift */; };
 		959650D42649FAEE00D91995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959650D22649FAEE00D91995 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		951E6588266D2CCE00207B28 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		951E658A266D576E00207B28 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		951E658B266D576E00207B28 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
+		951E658E266D693E00207B28 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		951E658F266D693E00207B28 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
 		959650C92649FAEE00D91995 /* SocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		959650CC2649FAEE00D91995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959650CE2649FAEE00D91995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				951E6586266D204200207B28 /* AlbumViewController.swift */,
 				951E658A266D576E00207B28 /* AlbumTableViewCell.swift */,
 				951E658B266D576E00207B28 /* AlbumTableViewCell.xib */,
+				951E658E266D693E00207B28 /* AlbumCollectionViewCell.swift */,
+				951E658F266D693E00207B28 /* AlbumCollectionViewCell.xib */,
 			);
 			path = SocialNetwork;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 				959650D62649FAEF00D91995 /* Assets.xcassets in Resources */,
 				959650D42649FAEE00D91995 /* Main.storyboard in Resources */,
 				951E658D266D576E00207B28 /* AlbumTableViewCell.xib in Resources */,
+				951E6591266D693E00207B28 /* AlbumCollectionViewCell.xib in Resources */,
 				951E65722669757400207B28 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +288,7 @@
 				951E656C266944FA00207B28 /* KeyboardViewController.swift in Sources */,
 				951E65792669A61600207B28 /* ImageDownloader.swift in Sources */,
 				951E657F266C7A7000207B28 /* PhotosCollectionViewController.swift in Sources */,
+				951E6590266D693E00207B28 /* AlbumCollectionViewCell.swift in Sources */,
 				951E6583266D175A00207B28 /* UserTableViewCell.swift in Sources */,
 				951E6587266D204200207B28 /* AlbumViewController.swift in Sources */,
 				951E658C266D576E00207B28 /* AlbumTableViewCell.swift in Sources */,
