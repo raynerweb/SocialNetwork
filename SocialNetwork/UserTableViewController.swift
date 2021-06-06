@@ -1,83 +1,87 @@
 //
-//  SocialTableViewController.swift
+//  UserTableViewController.swift
 //  SocialNetwork
 //
-//  Created by rayner on 03/06/21.
+//  Created by rayner on 06/06/21.
 //
 
 import UIKit
 
-class SocialTableViewController: UITableViewController {
-    
+class UserTableViewController: UITableViewController {
+
     private let kBaseURL = "https://jsonplaceholder.typicode.com"
     
-//    private let imageDownloader = ImageDownloader.shared
-    
-    @IBAction func onRefresh(_ sender: UIRefreshControl) {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-            self.refreshControl?.endRefreshing()
-        }
-    }
-    
-    private var postUsers = [PostUser]() {
+    private var users = [User]() {
         didSet {
             tableView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
-        PostTableViewCell.register(inside: self.tableView)
+        super.viewDidLoad()
+        print("View foi carregada")
     }
     
+    // Melhor lugar pra fazer requisicao HTTP
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        imageDownloader.beginCachingImages()
-        
-        if let url = URL(string: "\(kBaseURL)/posts") {
+        if let url = URL(string: "\(kBaseURL)/users") {
             let session = URLSession.shared
             let request = URLRequest(url: url)
             
             let task = session.dataTask(with: request) { (data, resp, error) in
                 if let response = resp as? HTTPURLResponse, response.statusCode >= 200 && response.statusCode < 300 {
                     
-                    if let postUsers = try? JSONDecoder().decode([PostUser].self, from: data!) {
+                    if let users = try? JSONDecoder().decode([User].self, from: data!) {
                         DispatchQueue.main.async {
-                            self.postUsers = postUsers
+                            self.users = users
                         }
                     }
                     
                 }
             }
             task.resume()
-                        
+                      
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.postUsers.count
+        return self.users.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
-        let postUser = postUsers[index]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.kReuseIdentifier, for: indexPath) as! PostTableViewCell
+        let user = users[index]
         
-        if let postUrl = URL(string: "https://picsum.photos/480/480?\(index)"), let profileUrl = URL(string: "https://picsum.photos/45/45?\(index)"){
-            cell.setup(with: postUser, postImage: postUrl, profileImage: profileUrl)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as! UserTableViewCell
         
+        cell.user = user
+
         return cell
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 630
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier, identifier == "onUserSegue" {
+
+            if let userCell = sender as? UserTableViewCell, let user = userCell.user {
+
+                if let destination = segue.destination as? AlbumViewController {
+                    destination.title = user.name
+                    destination.user = user
+                }
+
+            }
+        }
     }
 
 }
