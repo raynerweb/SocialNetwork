@@ -13,7 +13,7 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="418" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="SocialNetwork" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="499" height="418"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="499" height="418"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -30,7 +30,7 @@
                             <action selector="followButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Bm-mO-eiN"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4E-cD-ogH">
+                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4E-cD-ogH">
                         <rect key="frame" x="437.5" y="16" width="45" height="45"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="48h-JZ-Ubh"/>
@@ -46,8 +46,8 @@
                             <action selector="moreButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P10-mK-GUt"/>
                         </connections>
                     </button>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-ut-7EW">
-                        <rect key="frame" x="16" y="378" width="466.5" height="24"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-ut-7EW">
+                        <rect key="frame" x="16" y="378" width="0.0" height="24"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTd-9R-iBq">
                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -73,8 +73,8 @@
                                     <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SpN-MI-Fyf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-1p-7Nw">
-                                <rect key="frame" x="442.5" y="0.0" width="24" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-1p-7Nw">
+                                <rect key="frame" x="-24" y="0.0" width="24" height="24"/>
                                 <accessibility key="accessibilityConfiguration" label="Share"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="EZF-R3-fz8"/>
@@ -96,6 +96,11 @@
                             <constraint firstAttribute="width" constant="45" id="P2o-JL-FM9"/>
                             <constraint firstAttribute="height" constant="45" id="RAj-BD-Rs7"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="22.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q4Q-3Q-IRb">
                         <rect key="frame" x="0.0" y="77" width="498.5" height="280.5"/>
