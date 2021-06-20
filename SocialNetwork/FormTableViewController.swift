@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FormTableViewController: UITableViewController {
 
@@ -24,6 +25,14 @@ class FormTableViewController: UITableViewController {
                 textFields.delegate = self
             }
         }
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let context = AppDelegate.viewContext
+        
     }
     
 }

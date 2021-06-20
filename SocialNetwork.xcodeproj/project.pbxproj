@@ -26,6 +26,7 @@
 		951E658D266D576E00207B28 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951E658B266D576E00207B28 /* AlbumTableViewCell.xib */; };
 		951E6590266D693E00207B28 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E658E266D693E00207B28 /* AlbumCollectionViewCell.swift */; };
 		951E6591266D693E00207B28 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951E658F266D693E00207B28 /* AlbumCollectionViewCell.xib */; };
+		9533E2A226765AC200E231EF /* SocialDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9533E2A026765AC200E231EF /* SocialDataModel.xcdatamodeld */; };
 		959650CD2649FAEE00D91995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959650CC2649FAEE00D91995 /* AppDelegate.swift */; };
 		959650CF2649FAEE00D91995 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959650CE2649FAEE00D91995 /* SceneDelegate.swift */; };
 		959650D42649FAEE00D91995 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959650D22649FAEE00D91995 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		951E658B266D576E00207B28 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		951E658E266D693E00207B28 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		951E658F266D693E00207B28 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
+		9533E2A126765AC200E231EF /* SocialDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocialDataModel.xcdatamodel; sourceTree = "<group>"; };
 		959650C92649FAEE00D91995 /* SocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		959650CC2649FAEE00D91995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959650CE2649FAEE00D91995 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,13 +96,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		951E657A266C51E600207B28 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		951E657B266C51F400207B28 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +107,6 @@
 		959650C02649FAEE00D91995 = {
 			isa = PBXGroup;
 			children = (
-				951E657A266C51E600207B28 /* New Group */,
 				959650CB2649FAEE00D91995 /* SocialNetwork */,
 				959650CA2649FAEE00D91995 /* Products */,
 				9BDB86740F22B361462246DE /* Pods */,
@@ -153,6 +147,7 @@
 				951E658B266D576E00207B28 /* AlbumTableViewCell.xib */,
 				951E658E266D693E00207B28 /* AlbumCollectionViewCell.swift */,
 				951E658F266D693E00207B28 /* AlbumCollectionViewCell.xib */,
+				9533E2A026765AC200E231EF /* SocialDataModel.xcdatamodeld */,
 			);
 			path = SocialNetwork;
 			sourceTree = "<group>";
@@ -291,6 +286,7 @@
 				951E6590266D693E00207B28 /* AlbumCollectionViewCell.swift in Sources */,
 				951E6583266D175A00207B28 /* UserTableViewCell.swift in Sources */,
 				951E6587266D204200207B28 /* AlbumViewController.swift in Sources */,
+				9533E2A226765AC200E231EF /* SocialDataModel.xcdatamodeld in Sources */,
 				951E658C266D576E00207B28 /* AlbumTableViewCell.swift in Sources */,
 				951E65712669757400207B28 /* PostTableViewCell.swift in Sources */,
 				951E656E2669622A00207B28 /* FormTableViewController.swift in Sources */,
@@ -503,6 +499,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9533E2A026765AC200E231EF /* SocialDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9533E2A126765AC200E231EF /* SocialDataModel.xcdatamodel */,
+			);
+			currentVersion = 9533E2A126765AC200E231EF /* SocialDataModel.xcdatamodel */;
+			path = SocialDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 959650C12649FAEE00D91995 /* Project object */;
 }
