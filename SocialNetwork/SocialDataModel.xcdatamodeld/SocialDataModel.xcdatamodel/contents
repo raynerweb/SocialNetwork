@@ -10,10 +10,11 @@
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="userId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PostCoreData" inverseName="author" inverseEntity="PostCoreData"/>
     </entity>
     <elements>
-        <element name="UserCoreData" positionX="-246.78515625" positionY="38.08984375" width="128" height="103"/>
         <element name="PostCoreData" positionX="27.7109375" positionY="45.31640625" width="128" height="103"/>
+        <element name="UserCoreData" positionX="-246.78515625" positionY="38.08984375" width="128" height="104"/>
     </elements>
 </model>

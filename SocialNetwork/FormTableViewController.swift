@@ -27,14 +27,6 @@ class FormTableViewController: UITableViewController {
         }
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let context = AppDelegate.viewContext
-        
-    }
-    
 }
 
 

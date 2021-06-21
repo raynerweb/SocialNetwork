@@ -6,8 +6,26 @@
 //
 
 import UIKit
+import CoreData
 
 class UserTableViewController: UITableViewController {
+    
+    private lazy var fetchRequest: NSFetchRequest<UserCoreData> = {
+        let request: NSFetchRequest<UserCoreData> = UserCoreData.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        return request
+    }()
+    
+    private lazy var fetchedRestultsController: NSFetchedResultsController<UserCoreData> = {
+        let fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: self.fetchRequest,
+            managedObjectContext: AppDelegate.viewContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        fetchedResultsController.delegate = self
+        return fetchedResultsController
+    }()
 
     private let kBaseURL = "https://jsonplaceholder.typicode.com"
     
@@ -21,6 +39,8 @@ class UserTableViewController: UITableViewController {
         super.viewDidLoad()
         print("View foi carregada")
     }
+    
+
     
     // Melhor lugar pra fazer requisicao HTTP
     override func viewWillAppear(_ animated: Bool) {
@@ -44,19 +64,46 @@ class UserTableViewController: UITableViewController {
             task.resume()
                       
         }
+        
+//        do {
+//            try fetchedRestultsController.performFetch()
+//        }catch {
+//            debugPrint(error)
+//        }
     }
     
+    
+    // ALTERANDO PARA COREDATA
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return fetchedRestultsController.sections?.count ?? 1
+//    }
+    
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if let sections = fetchedRestultsController.sections, sections.count > 0 {
+//            return sections[section].numberOfObjects
+//        } else {
+//            return 0
+//        }
+//    }
+//
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.users.count
     }
     
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as! UserTableViewCell
+//        let userCoreData = fetchedRestultsController.object(at: indexPath)
+//        cell.user = userCoreData.toUser()
+//        return cell
+//    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
-        
+
         let user = users[index]
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as! UserTableViewCell
-        
+
         cell.user = user
 
         return cell
