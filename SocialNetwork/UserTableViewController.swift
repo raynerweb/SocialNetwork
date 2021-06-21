@@ -16,7 +16,7 @@ class UserTableViewController: UITableViewController {
         return request
     }()
     
-    private lazy var fetchedRestultsController: NSFetchedResultsController<UserCoreData> = {
+    private lazy var fetchedResultsController: NSFetchedResultsController<UserCoreData> = {
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: self.fetchRequest,
             managedObjectContext: AppDelegate.viewContext,
@@ -65,11 +65,15 @@ class UserTableViewController: UITableViewController {
                       
         }
         
-//        do {
-//            try fetchedRestultsController.performFetch()
-//        }catch {
-//            debugPrint(error)
-//        }
+        do {
+            try fetchedResultsController.performFetch()
+            let usersCoreData: [UserCoreData]? = fetchedResultsController.fetchedObjects
+            if let users = usersCoreData {
+                users.count
+            }
+        }catch {
+            debugPrint(error)
+        }
     }
     
     
