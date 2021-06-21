@@ -70,8 +70,18 @@ class UserTableViewController: UITableViewController {
                     if let users = try? JSONDecoder().decode([User].self, from: data!) {
                         DispatchQueue.main.async {
                             self.users = users
+                            var userCoreDataList: [UserCoreData] = []
+                            
                             for user in users {
-                                user.saveInCoreData()
+                                userCoreDataList.append(user.toUserCoreData())
+                            }
+                            
+                            let context = AppDelegate.viewContext
+                            do {
+                                try context.save()
+                                print("Success")
+                            } catch {
+                                print("Error saving: \(error)")
                             }
                         }
                     }
