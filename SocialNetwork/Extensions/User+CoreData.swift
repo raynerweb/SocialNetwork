@@ -10,12 +10,18 @@ import CoreData
 
 extension User {
     
-    func toUserCoreData(in context: NSManagedObjectContext = AppDelegate.viewContext) -> UserCoreData {
+    func saveInCoreData(in context: NSManagedObjectContext = AppDelegate.viewContext) {
         let userCoreData = UserCoreData(context: context)
         userCoreData.email = self.email
         userCoreData.name = self.name
         userCoreData.username = self.username
-        return userCoreData
+        
+        do {
+            try context.save()
+            print("Success")
+        } catch {
+            print("Error saving: \(error)")
+        }
     }
 }
 

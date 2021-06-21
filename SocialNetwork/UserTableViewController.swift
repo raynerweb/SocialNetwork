@@ -46,6 +46,20 @@ class UserTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        do {
+            try fetchedResultsController.performFetch()
+            let usersCoreData: [UserCoreData]? = fetchedResultsController.fetchedObjects
+            if let users = usersCoreData {
+                if users.isEmpty {
+                    getUsersFromAPI()
+                }
+            }
+        }catch {
+            debugPrint(error)
+        }
+    }
+    
+    private func getUsersFromAPI() {
         if let url = URL(string: "\(kBaseURL)/users") {
             let session = URLSession.shared
             let request = URLRequest(url: url)
@@ -56,6 +70,9 @@ class UserTableViewController: UITableViewController {
                     if let users = try? JSONDecoder().decode([User].self, from: data!) {
                         DispatchQueue.main.async {
                             self.users = users
+                            for user in users {
+                                user.saveInCoreData()
+                            }
                         }
                     }
                     
@@ -64,54 +81,45 @@ class UserTableViewController: UITableViewController {
             task.resume()
                       
         }
-        
-        do {
-            try fetchedResultsController.performFetch()
-            let usersCoreData: [UserCoreData]? = fetchedResultsController.fetchedObjects
-            if let users = usersCoreData {
-                users.count
-            }
-        }catch {
-            debugPrint(error)
-        }
     }
     
     
     // ALTERANDO PARA COREDATA
 //    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return fetchedRestultsController.sections?.count ?? 1
+//        return fetchedResultsController.sections?.count ?? 1
 //    }
     
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let sections = fetchedRestultsController.sections, sections.count > 0 {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResultsController.fetchedObjects?.count ?? 0
+//        if let sections = fetchedResultsController.sections, sections.count > 0 {
 //            return sections[section].numberOfObjects
 //        } else {
 //            return 0
 //        }
-//    }
-//
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.users.count
     }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as! UserTableViewCell
-//        let userCoreData = fetchedRestultsController.object(at: indexPath)
-//        cell.user = userCoreData.toUser()
-//        return cell
+
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return self.users.count
 //    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let index = indexPath.row
-
-        let user = users[index]
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as! UserTableViewCell
-
-        cell.user = user
-
+        let userCoreData = fetchedResultsController.object(at: indexPath)
+        cell.user = userCoreData.toUser()
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let index = indexPath.row
+//
+//        let user = users[index]
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as! UserTableViewCell
+//
+//        cell.user = user
+//
+//        return cell
+//    }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60

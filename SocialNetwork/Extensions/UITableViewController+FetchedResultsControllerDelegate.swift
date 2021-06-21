@@ -37,18 +37,21 @@ extension UITableViewController: NSFetchedResultsControllerDelegate {
                     for type: NSFetchedResultsChangeType,
                     newIndexPath: IndexPath?) {
         
-        switch type {
-        case .insert:
-            tableView.insertRows(at: [indexPath!], with: .left)
-        case .delete:
-            tableView.deleteRows(at: [indexPath!], with: .left)
-        case .update:
-            tableView.reloadRows(at: [indexPath!], with: .middle)
-        case .move:
-            tableView.moveRow(at: indexPath!, to: newIndexPath!)
-        @unknown default:
-            break
+        if let index = indexPath {
+            switch type {
+            case .insert:
+                tableView.insertRows(at: [index], with: .left)
+            case .delete:
+                tableView.deleteRows(at: [index], with: .left)
+            case .update:
+                tableView.reloadRows(at: [index], with: .middle)
+            case .move:
+                tableView.moveRow(at: index, to: newIndexPath!)
+            @unknown default:
+                break
+            }
         }
+
         
     }
     
